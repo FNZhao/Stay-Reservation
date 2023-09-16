@@ -1,0 +1,17 @@
+create bucket:
+gcloud storage buckets create gs://staybooking-zfn1 --location=us-west1 --default-storage-class=STANDARD --no-uniform-bucket-level-access
+bucket name should be unique
+
+generate and download credential.json:
+1. create service account:
+gcloud iam service-accounts create my-service-account
+2. binding:
+gcloud projects add-iam-policy-binding vibrant-reach-365719 --member=serviceAccount:my-service-account@vibrant-reach-365719.iam.gserviceaccount.com --role=roles/editor
+use project id: vibrant-reach-365719
+3. download:
+gcloud iam service-accounts keys create credentials.json --iam-account=my-service-account@vibrant-reach-365719.iam.gserviceaccount.com --project=vibrant-reach-365719
+
+
+keyString":"AIzaSyDAZqNVt25aUa7RPATC6I1vrxaHzBW0E4A
+
+https://vibrant-reach-365719.ue.r.appspot.com
